@@ -1,0 +1,101 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+:root {
+    font-family: Georgia, 'Times New Roman', serif;
+    color: #33291f;
+    background: #faf8f1;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    --ink: #33291f;
+    --muted: #796a58;
+    --wash: #fff2a8;
+    --paper: #faf8f1;
+    --line: #ded5c5;
+    --accent: #194fce;
+    --yellow: #ffd52f;
+    --brown: #765538;
+}
+
+* { box-sizing: border-box; }
+
+body {
+    min-width: 320px;
+    min-height: 100vh;
+    margin: 0;
+    background:
+        radial-gradient(ellipse at 90% 5%, rgba(25, 79, 206, .09), transparent 34rem),
+        radial-gradient(ellipse at 5% 90%, rgba(255, 213, 47, .12), transparent 28rem),
+        var(--paper);
+    color: var(--ink);
+}
+
+a { color: inherit; text-decoration: none; }
+button, input, textarea { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+
+.site-shell { width: min(840px, calc(100% - 40px)); margin: 0 auto; }
+.site-header { display: flex; min-height: 72px; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); }
+.brand { color: var(--accent); font-size: 19px; font-weight: 600; }
+.site-nav { display: flex; align-items: center; gap: 24px; color: var(--muted); font-family: Arial, sans-serif; font-size: 13px; }
+.site-nav a:hover, .back-link:hover, .text-link:hover { color: var(--accent); }
+.nav-write { padding: 8px 12px; background: var(--yellow); color: var(--ink); border-radius: 5px; }
+
+.journal-section { padding: 48px 0 64px; }
+.section-heading { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 22px; }
+.section-heading h1, .editor-heading h1, .story-header h1 { margin: 0; font-size: clamp(30px, 5vw, 42px); font-weight: 400; }
+.section-heading h1 { text-decoration: underline; text-decoration-color: var(--yellow); text-decoration-thickness: 4px; text-underline-offset: 7px; }
+.post-count, .card-topline, .story-meta { color: var(--muted); font-family: Arial, sans-serif; font-size: 12px; }
+.post-card { margin-bottom: 14px; padding: 20px 22px; border: 1px solid var(--line); border-top: 3px solid var(--yellow); background: rgba(255, 255, 255, .68); }
+.card-topline { text-align: right; }
+.post-card h3 { margin: 7px 0 9px; font-size: 23px; font-weight: 400; }
+.post-card h3 a:hover { color: var(--accent); }
+.post-excerpt { margin-bottom: 18px; color: var(--brown); font-size: 15px; line-height: 1.7; white-space: pre-line; }
+.card-bottom { display: flex; flex-wrap: wrap; align-items: center; gap: 18px; border-top: 1px solid var(--line); padding-top: 12px; }
+.card-bottom form { margin: 0; }
+.text-link { padding: 0; border: 0; background: none; color: var(--accent); cursor: pointer; font-family: Arial, sans-serif; font-size: 13px; }
+.empty-state { padding: 32px 22px; border: 1px solid var(--line); border-left: 4px solid var(--yellow); background: rgba(255, 255, 255, .55); }
+.empty-state h2 { margin: 0 0 8px; font-size: 23px; font-weight: 400; }
+.empty-state p { margin: 0 0 18px; color: var(--muted); }
+
+.notice { margin: 22px 0 0; padding: 12px 15px; border-left: 3px solid var(--accent); background: var(--wash); color: var(--ink); font-family: Arial, sans-serif; font-size: 14px; }
+.button { display: inline-flex; min-height: 38px; align-items: center; justify-content: center; padding: 0 15px; border: 1px solid var(--accent); cursor: pointer; font-family: Arial, sans-serif; font-size: 13px; }
+.button-primary { background: var(--accent); color: #fff; }
+.button-primary:hover { border-color: var(--yellow); background: #123da7; }
+.button-secondary { background: transparent; color: var(--accent); border-radius: 5px; }
+.button-secondary:hover { background: var(--wash); }
+
+.editor-page, .reading-page { max-width: 680px; margin: 0 auto; padding: 38px 0 60px; }
+.back-link { display: inline-block; margin-bottom: 28px; color: var(--muted); font-family: Arial, sans-serif; font-size: 13px; }
+.editor-heading { margin-bottom: 24px; }
+.form-field { margin-bottom: 20px; }
+.form-field label { display: block; margin-bottom: 8px; font-family: Arial, sans-serif; font-size: 13px; }
+.form-field input, .form-field textarea { display: block; width: 100%; padding: 12px; border: 1px solid #c9cbc5; border-radius: 0; outline: none; background: rgba(255, 255, 255, .55); color: var(--ink); font-size: 15px; }
+.form-field input:focus, .form-field textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(255, 213, 47, .55); }
+.form-field textarea { min-height: 230px; line-height: 1.7; resize: vertical; }
+.field-error { margin: 7px 0 0; color: #9c3d35; font-family: Arial, sans-serif; font-size: 13px; }
+.editor-card { padding: 22px; border: 1px solid var(--line); border-top: 3px solid var(--yellow); background: rgba(255, 255, 255, .55); }
+.editor-actions { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding-top: 16px; border-top: 1px solid var(--line); }
+
+.story-header { padding: 10px 0 24px; }
+.story-header h1 { margin-bottom: 10px; }
+.story-body { color: var(--brown); font-size: 17px; line-height: 1.9; white-space: pre-line; overflow-wrap: anywhere; }
+.story-footer { margin-top: 30px; padding-top: 18px; border-top: 1px solid var(--line); }
+.story-actions { display: flex; align-items: center; gap: 12px; }
+.story-actions form { margin: 0; }
+.button-quiet { border-color: transparent; background: transparent; color: var(--muted); }
+.button-quiet:hover { color: #9c3d35; }
+.site-footer { padding: 18px 0; border-top: 1px solid var(--line); color: var(--muted); font-family: Arial, sans-serif; font-size: 12px; text-align: center; }
+
+@media (max-width: 560px) {
+    .site-shell { width: calc(100% - 32px); }
+    .site-header { min-height: 64px; }
+    .site-nav { gap: 15px; }
+    .journal-section { padding-top: 34px; }
+    .post-card, .editor-card { padding: 17px; }
+    .editor-actions { align-items: flex-start; }
+}
