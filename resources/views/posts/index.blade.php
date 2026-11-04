@@ -13,6 +13,8 @@
             <span class="post-count">{{ $posts->count() }} {{ \Illuminate\Support\Str::plural('post', $posts->count()) }}</span>
         </div>
 
+        <a href="{{ route('posts.reports.index') }}">View Reports</a>
+
         @forelse ($posts as $post)
             <article class="post-card">
                 <div class="card-topline">
@@ -35,6 +37,7 @@
                 <h2>No posts yet</h2>
                 <p>Start your journal with a new post.</p>
                 <a class="button button-secondary" href="{{ route('posts.create') }}">Create a post</a>
+        
             </div>
         @endforelse
     </section>
